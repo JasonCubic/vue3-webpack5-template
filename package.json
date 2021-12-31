@@ -1,0 +1,122 @@
+{
+  "name": "vue3-webpack5-template",
+  "version": "1.0.0",
+  "description": "starter for vue3 using webpack 5",
+  "private": true,
+  "scripts": {
+    "start": "yarn run dev",
+    "dev": "webpack serve --mode development --client-overlay --devtool source-map --progress --open",
+    "build": "webpack --mode production",
+    "test": "jest",
+    "test:watch": "jest --watchAll",
+    "lint": "eslint --ext .js,.vue .",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "*.{js,vue}": "eslint --cache && jest --ci"
+  },
+  "keywords": [
+    "vue3",
+    "webpack5",
+    "jest",
+    "babel",
+    "airbnb"
+  ],
+  "author": "Jason Cubic",
+  "license": "ISC",
+  "dependencies": {
+    "vue": "^3.2.26"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.7",
+    "@babel/preset-env": "^7.16.7",
+    "@vue/compiler-sfc": "^3.2.26",
+    "@vue/test-utils": "^2.0.0-rc.18",
+    "@vue/vue3-jest": "^27.0.0-alpha.4",
+    "autoprefixer": "^10.4.1",
+    "babel-jest": "^27.4.5",
+    "babel-loader": "^8.2.3",
+    "clean-webpack-plugin": "^4.0.0",
+    "copy-webpack-plugin": "^10.2.0",
+    "css-loader": "^6.5.1",
+    "css-minimizer-webpack-plugin": "^3.3.1",
+    "eslint": "8.2.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "2.25.2",
+    "eslint-plugin-vue": "^8.2.0",
+    "html-webpack-plugin": "^5.5.0",
+    "husky": "^7.0.4",
+    "jest": "^27.4.5",
+    "lint-staged": "^12.1.4",
+    "mini-css-extract-plugin": "^2.4.5",
+    "postcss": "^8.4.5",
+    "postcss-loader": "^6.2.1",
+    "vue-loader": "^17.0.0",
+    "webpack": "^5.65.0",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.7.2"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true,
+      "vue/setup-compiler-macros": true
+    },
+    "parserOptions": {
+      "ecmaVersion": 2020
+    },
+    "extends": [
+      "plugin:vue/vue3-essential",
+      "eslint-config-airbnb-base"
+    ],
+    "rules": {
+      "no-console": "off",
+      "linebreak-style": "off",
+      "max-len": [
+        "warn",
+        {
+          "code": 175
+        }
+      ]
+    },
+    "overrides": [
+      {
+        "files": [
+          "**/*.test.{j,t}s?(x)"
+        ],
+        "env": {
+          "jest": true
+        }
+      }
+    ],
+    "ignorePatterns": [
+      "/dist/**"
+    ]
+  },
+  "babel": {
+    "presets": [
+      [
+        "@babel/preset-env",
+        {}
+      ]
+    ]
+  },
+  "jest": {
+    "testEnvironment": "jsdom",
+    "transform": {
+      "^.+\\.vue$": "@vue/vue3-jest",
+      "^.+\\js$": "babel-jest"
+    },
+    "browserslist": [
+      "> 1%",
+      "last 2 versions",
+      "not dead"
+    ],
+    "moduleFileExtensions": [
+      "vue",
+      "js",
+      "json",
+      "node"
+    ]
+  }
+}

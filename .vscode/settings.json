@@ -1,0 +1,4 @@
+{
+  // This settings is in case you want to use liveServer to preview your built files in the dist folder
+  "liveServer.settings.root": "/dist/"
+}
